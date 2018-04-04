@@ -6,7 +6,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  contact = {
+    name:'me',
+    email:'soukaina@gmail.com',
+    photo:'assets/imgs/logo.png'
+  }
   constructor(public navCtrl: NavController) {
 
   }
