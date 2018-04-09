@@ -17,59 +17,64 @@
 
 <ion-content class="animated fadeIn common-bg content content-md">
   <div class="fixed-content" style="margin-top: 56px;"></div>
-  <div class="scroll-content" style="margin-top: 56px;">
-    <div class="booking-card marginB-16px">
+  <div class="scroll-content" >
+    <div class="gallery-card marginB-16px">
       <ion-grid class="card grid" fixed="">
+        <!--Search keyword-->
         <ion-row class="row">
           <ion-col class="no-padding col">
-            <ion-searchbar animated="true" autocomplete="on" autocorrect="on" placeholder="Destination or address..." spellcheck="true" class="searchbar searchbar-md ng-untouched ng-pristine ng-valid searchbar-animated"><div class="searchbar-input-container"><button class="searchbar-md-cancel button button-md button-clear button-clear-md button-clear-md-dark" clear="" color="dark" ion-button="" mode="md" type="button"><span class="button-inner"><ion-icon name="md-arrow-back" role="img" class="icon icon-md ion-md-arrow-back" aria-label="arrow back"></ion-icon></span><div class="button-effect"></div></button><div class="searchbar-search-icon"></div><input class="searchbar-input" dir="auto" placeholder="Destination or address..." type="search" autocomplete="on" autocorrect="on" spellcheck="true"><button class="searchbar-clear-icon button button-md button-clear button-clear-md" clear="" ion-button="" type="button"><span class="button-inner"></span><div class="button-effect"></div></button></div><button class="searchbar-ios-cancel button button-ios button-clear button-clear-ios" clear="" ion-button="" mode="ios" type="button" tabindex="-1"><span class="button-inner">Cancel</span><div class="button-effect"></div></button></ion-searchbar>
+            <ion-searchbar animated="true" autocomplete="on" autocorrect="on" placeholder="Chercher une image" spellcheck="true" class="searchbar searchbar-md ng-untouched ng-pristine ng-valid searchbar-animated">
+              <div class="searchbar-input-container">
+                <button class="searchbar-md-cancel button button-md button-clear button-clear-md button-clear-md-dark" clear="" color="dark" ion-button="" mode="md" type="button">
+                  <span class="button-inner">
+                    <ion-icon name="md-arrow-back" role="img" class="icon icon-md ion-md-arrow-back" aria-label="arrow back"></ion-icon>
+                  </span>
+                  <div class="button-effect"></div>
+                </button>
+                <div class="searchbar-search-icon"></div>
+                <input class="searchbar-input" dir="auto" placeholder="Chercher une image" type="search" autocomplete="on" autocorrect="on" spellcheck="true">
+                <button class="searchbar-clear-icon button button-md button-clear button-clear-md" clear="" ion-button="" type="button">
+                  <span class="button-inner"></span>
+                  <div class="button-effect"></div>
+                </button>
+              </div>
+              <button class="searchbar-ios-cancel button button-ios button-clear button-clear-ios" clear="" ion-button="" mode="ios" type="button" tabindex="-1">
+                <span class="button-inner">Annuler</span>
+                <div class="button-effect"></div>
+              </button>
+            </ion-searchbar>
             <!---->
           </ion-col>
         </ion-row>
-        <ion-row class="row">
-          <ion-col class="bb no-paddingB col" col-6="">
-            <ion-label class="no-margin mb-half bold text-primary label label-md">Check-in</ion-label>
-          </ion-col>
-          <ion-col class="bb no-paddingB col" col-6="">
-            <ion-label class="no-margin mb-half bold text-primary label label-md">Check-out</ion-label>
-          </ion-col>
-          <ion-col class="br bb datetime-btn col" col-6="">
-            <ion-icon item-left="" name="md-calendar" role="img" class="icon icon-md ion-md-calendar" aria-label="calendar"></ion-icon>
-            <ion-datetime class="text-primary datetime datetime-md ng-untouched ng-pristine ng-valid" displayformat="DDD, MMM, DD" pickerformat="DD/MM/YYYY"><!----><!----><div class="datetime-text">Thu, Apr, 05</div><button aria-haspopup="true" class="item-cover item-cover-md item-cover-default item-cover-default-md" ion-button="item-cover" type="button" id="undefined" aria-disabled="false"><span class="button-inner"></span><div class="button-effect"></div></button></ion-datetime>
-          </ion-col>
-          <ion-col class="bb datetime-btn col" col-6="">
-            <ion-icon item-left="" name="md-calendar" role="img" class="icon icon-md ion-md-calendar" aria-label="calendar"></ion-icon>
-            <ion-datetime class="text-primary datetime datetime-md ng-untouched ng-pristine ng-valid" displayformat="DDD, MMM, DD" pickerformat="DD/MM/YYYY"><!----><!----><div class="datetime-text">Fri, Apr, 06</div><button aria-haspopup="true" class="item-cover item-cover-md item-cover-default item-cover-default-md" ion-button="item-cover" type="button" id="undefined" aria-disabled="false"><span class="button-inner"></span><div class="button-effect"></div></button></ion-datetime>
-          </ion-col>
-        </ion-row>
-        <ion-row class="row">
-          <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
-            <div class="guests bb">
-              <ion-item class="item item-block item-md item-select input-has-value item-input-has-value"><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-md" id="lbl-73">Rooms</ion-label><!----><ion-select canceltext="Cancel" oktext="OK" class="select select-md ng-untouched ng-pristine ng-valid"><!----><!----><div class="select-text">1</div><div class="select-icon"><div class="select-icon-inner"></div></div><button aria-haspopup="true" class="item-cover item-cover-md item-cover-default item-cover-default-md" ion-button="item-cover" type="button" id="select-73-0" aria-labelledby="lbl-73" aria-disabled="false"><span class="button-inner"></span><div class="button-effect"></div></button></ion-select></div><!----></div><div class="button-effect"></div></ion-item>
-            </div>
-          </ion-col>
-          <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
-            <div class="guests bb">
-              <ion-item class="item item-block item-md item-select input-has-value item-input-has-value"><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-md" id="lbl-74">Adults</ion-label><!----><ion-select canceltext="Cancel" oktext="OK" class="select select-md ng-untouched ng-pristine ng-valid"><!----><!----><div class="select-text">1</div><div class="select-icon"><div class="select-icon-inner"></div></div><button aria-haspopup="true" class="item-cover item-cover-md item-cover-default item-cover-default-md" ion-button="item-cover" type="button" id="select-74-0" aria-labelledby="lbl-74" aria-disabled="false"><span class="button-inner"></span><div class="button-effect"></div></button></ion-select></div><!----></div><div class="button-effect"></div></ion-item>
-            </div>
-          </ion-col>
-          <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
-            <div class="guests bb">
-              <ion-item class="item item-block item-md item-select input-has-value item-input-has-value"><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-md" id="lbl-75">Children</ion-label><!----><ion-select canceltext="Cancel" oktext="OK" class="select select-md ng-untouched ng-pristine ng-valid"><!----><!----><div class="select-text">0</div><div class="select-icon"><div class="select-icon-inner"></div></div><button aria-haspopup="true" class="item-cover item-cover-md item-cover-default item-cover-default-md" ion-button="item-cover" type="button" id="select-75-0" aria-labelledby="lbl-75" aria-disabled="false"><span class="button-inner"></span><div class="button-effect"></div></button></ion-select></div><!----></div><div class="button-effect"></div></ion-item>
-            </div>
-          </ion-col>
-          <ion-col class="no-paddingT no-paddingB col" col-6="">
-
-          </ion-col>
-        </ion-row>
-
-        <!---->
-
+        <!--Sarching parameters-->
+          <ion-row class="row">
+            <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
+              <div class="guests bb">
+                <ion-item class="item item-block item-md item-select">
+                  <ion-label class="label label-md">Orientation</ion-label>
+                  <ion-select [(ngModel)]="orientation" okText="Ok" cancelText="Annuler">
+                    <ion-option *ngFor="let o of orientations" value="{{o.id}}" [selected]="o.value == 'all'">{{o.label}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+            </ion-col>
+            <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
+              <div class="guests bb">
+                <ion-item class="item item-block item-md item-select">
+                  <ion-label class="label label-md">Catégorie</ion-label>
+                  <ion-select [(ngModel)]="category" okText="Ok" cancelText="Annuler">
+                    <ion-option *ngFor="let c of categories" value="{{c.id}}" [selected]="c.value == 'nil'">{{c.label}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+            </ion-col>
+          </ion-row>
+        <!--Search Button-->
         <ion-row class="row">
           <ion-col class="col">
             <button block="" class="round button button-md button-default button-default-md button-block button-block-md button-md-primary" color="primary" ion-button="" tappable=""><span class="button-inner">
               <ion-icon name="search" role="img" class="icon icon-md ion-md-search" aria-label="search"></ion-icon>
-              Search
+              Chercher
             </span><div class="button-effect" style="transform: translate3d(-5px, -97px, 0px) scale(1); height: 240px; width: 240px; opacity: 0; transition: transform 395ms, opacity 277ms 118ms;"></div></button>
           </ion-col>
         </ion-row>

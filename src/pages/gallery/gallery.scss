@@ -2,94 +2,14 @@ page-gallery {
     ion-content {
         position: absolute;
     }
-    .fadeIn {
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
-    }
-    .animated {
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-    }
-    .common-bg {
-        background-color: #fafbfc;
-    }
-    .content-md {
-        color: rgba(86,61,124,.75);
-        background-color: #fff;
-    }
-    .fixed-content {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        position: absolute;
-        display: block;
-    }
-    .scroll-content {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        position: absolute;
-        z-index: 1;
-        display: block;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-        will-change: scroll-position;
-        contain: size style layout;
-    }
-    .booking-card {
-        padding: 16px;
-        border-top: 5rem solid #563d7c;
-    }
-    .marginB-16px {
-        margin-bottom: 16px!important;
-    }
-    .booking-card ion-grid {
-        margin-top: -5rem;
-        background-color: #fff;
-        padding: 0;
-    }
-    .card {
-        background: #fff;
-        border-radius: 1rem;
-        -webkit-box-shadow: 0 0 1px rgba(86,61,124,.2), 0 2px 4px rgba(86,61,124,.15);
-        box-shadow: 0 0 1px rgba(86,61,124,.2), 0 2px 4px rgba(86,61,124,.15);
-    }
-    .grid {
-        padding: 5px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-    .row {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-    .booking-card ion-grid ion-row ion-col:first-child {
+    
+    .gallery-card ion-grid ion-row ion-col:first-child {
         margin-left: 0;
     }
-    .booking-card ion-grid ion-row:first-child ion-col {
+    .gallery-card ion-grid ion-row:first-child ion-col {
         border-bottom: 1px solid #d7d6e1;
     }
-    .home .booking-card ion-grid ion-row ion-col, page-home .booking-card ion-grid ion-row ion-col {
+    .gallery-card ion-grid ion-row ion-col {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -101,30 +21,14 @@ page-gallery {
         padding: 1.5rem;
         font-size: 1.5rem;
     }
-    .no-padding {
-        padding: 0!important;
-    }
-    .col {
-        padding: 5px;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        min-height: 1px;
-        -webkit-flex-basis: 0;
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        max-width: 100%;
-    }
-    .home .booking-card ion-grid .searchbar, page-home .booking-card ion-grid .searchbar {
+    .gallery-card ion-grid .searchbar {
         padding: 0;
     }
-    .home .booking-card .searchbar, page-home .booking-card .searchbar {
+    .gallery-card .searchbar {
         z-index: 1000;
     }
+    
+    
     .searchbar-md {
         background: inherit;
         padding: 8px;
@@ -175,140 +79,7 @@ page-gallery {
         box-shadow: none;
         opacity: 1;
     }
-    .button-md {
-        border-radius: 2px;
-        overflow: hidden;
-        height: 3.6rem;
-        font-size: 1.4rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: #fff;
-        background-color: #563d7c;
-        -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-        -webkit-transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .3s cubic-bezier(.4,0,.2,1);
-        transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .3s cubic-bezier(.4,0,.2,1);
-        transition: box-shadow .3s cubic-bezier(.4,0,.2,1),background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1);
-        transition: box-shadow .3s cubic-bezier(.4,0,.2,1),background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .3s cubic-bezier(.4,0,.2,1);
-        margin: .4rem .2rem;
-        padding: 0 1.1em;
-    }
-    [ion-button] {
-        text-decoration: none;
-    }
-    .button {
-        text-align: center;
-        -moz-appearance: none;
-        -ms-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-        position: relative;
-        z-index: 0;
-        display: inline-block;
-        text-overflow: ellipsis;
-        text-transform: none;
-        white-space: nowrap;
-        cursor: pointer;
-        vertical-align: top;
-        vertical-align: -webkit-baseline-middle;
-        -webkit-transition: background-color,opacity .1s linear;
-        transition: background-color,opacity .1s linear;
-        -webkit-font-kerning: none;
-        font-kerning: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        contain: content;
-    }
-    button {
-        border: 0;
-        font-family: inherit;
-        font-style: inherit;
-        font-variant: inherit;
-        line-height: 1;
-        text-transform: none;
-        cursor: pointer;
-        -webkit-appearance: button;
-    }
-    [tappable], [tappable] div, [tappable] ion-icon, [tappable] ion-label, [tappable] span, a, a div, a ion-icon, a ion-label, a span, button, button div, button ion-icon, button ion-label, button span, input, textarea {
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-    }
-    .button-inner {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-flow: row nowrap;
-        -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
-    [tappable], [tappable] div, [tappable] ion-icon, [tappable] ion-label, [tappable] span, a, a div, a ion-icon, a ion-label, a span, button, button div, button ion-icon, button ion-label, button span, input, textarea {
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-    }
-    .md button .button-effect {
-        display: block;
-    }
-    .button-clear-md .button-effect {
-        background-color: #999;
-    }
-    .button-md .button-effect {
-        background-color: #fff;
-    }
-    .button-effect {
-        border-radius: 50%;
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-        position: absolute;
-        z-index: 0;
-        display: none;
-        background-color: #555;
-        opacity: .2;
-        -webkit-transition-timing-function: ease-in-out;
-        transition-timing-function: ease-in-out;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-    }
-    .booking-card ion-grid ion-row ion-col ion-icon {
-        margin-right: 1rem;
-        font-size: 2.5rem;
-        width: 2.5rem;
-    }
-    ion-icon {
-        display: inline-block;
-        font-size: 1.2em;
-    }
-    ion-icon {
-        display: inline-block;
-        font-family: Ionicons;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 400;
-        line-height: 1;
-        text-rendering: auto;
-        text-transform: none;
-        speak: none;
-    }
+    
     .searchbar-md .searchbar-clear-icon {
         right: 13px;
         top: 0;
@@ -330,11 +101,11 @@ page-gallery {
     .searchbar-md .searchbar-ios-cancel {
         display: none;
     }
-    .booking-card ion-grid .searchbar.searchbar-md .searchbar-input {
+    .gallery-card ion-grid .searchbar.searchbar-md .searchbar-input {
         -webkit-box-shadow: inset 0 0 8px rgba(86,61,124,.25), 0 6px 0 #563d7c;
         box-shadow: inset 0 0 8px rgba(86,61,124,.25), 0 6px 0 #563d7c;
     }
-    .booking-card ion-grid .searchbar .searchbar-input {
+    .gallery-card ion-grid .searchbar .searchbar-input {
         color: #563d7c;
         border-radius: 1rem;
     }
@@ -348,5 +119,158 @@ page-gallery {
         border: 0;
         font-family: inherit;
     }
+    .header-md::after{
+        background-image: none;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+        border-width: 0px;
+    }
+    .searchbar-ios .searchbar-search-icon{
+        margin-left:0px !important;
+    }
+    .searchbar-ios .searchbar-input{
+        padding-left: calc(35% - 40.5px) !important;
+    }
+    
+    .gallery-card .guests {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom-color: transparent;
+    }
+
+    .gallery-card .bb {
+        border-bottom: 1px solid rgba(86,61,124,.1);
+    }
+    .gallery-card .guests .item {
+        font-size: 1.25rem;
+        padding-left: 0;
+        border: 0;
+    }
+    .gallery-card .guests .item .item-inner {
+        padding: 0;
+    }
+    .gallery-card .guests .item .label {
+        color: #563d7c;
+        margin-right: 0;
+    }
+    .item-md {
+        padding-left: 16px;
+        padding-right: 0;
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: none;
+        color: rgba(86,61,124,.75);
+        background-color: #fff;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: background-color .3s cubic-bezier(.4,0,.2,1);
+        transition: background-color .3s cubic-bezier(.4,0,.2,1);
+    }
+    .item-block {
+        margin: 0;
+        padding: 0;
+        text-align: initial;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 4.4rem;
+        border: 0;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        color: inherit;
+    }
+    .item {
+        contain: content;
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 1px solid #dedede;
+    }
+    .item-inner {
+        margin: 0;
+        padding: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-orient: inherit;
+        -webkit-box-direction: inherit;
+        -webkit-flex-direction: inherit;
+        -ms-flex-direction: inherit;
+        flex-direction: inherit;
+        -webkit-box-align: inherit;
+        -webkit-align-items: inherit;
+        -ms-flex-align: inherit;
+        align-items: inherit;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        min-height: inherit;
+        border: 0;
+    }
+    .input-wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-orient: inherit;
+        -webkit-box-direction: inherit;
+        -webkit-flex-direction: inherit;
+        -ms-flex-direction: inherit;
+        flex-direction: inherit;
+        -webkit-box-align: inherit;
+        -webkit-align-items: inherit;
+        -ms-flex-align: inherit;
+        align-items: inherit;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        text-overflow: ellipsis;
+    }
+    .item-select .label-md {
+        color: #999;
+    }
+    .label-md {
+        margin: 13px 8px 13px 0;
+    }
+    ion-label {
+        margin: 0;
+        display: block;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+
 
 }
