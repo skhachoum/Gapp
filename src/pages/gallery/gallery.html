@@ -20,40 +20,30 @@
   <div class="scroll-content" >
     <div class="gallery-card marginB-16px">
       <ion-grid class="card grid" fixed="">
-        <!--Search keyword-->
+        <!--Start search keyword-->
         <ion-row class="row">
           <ion-col class="no-padding col">
-            <ion-searchbar animated="true" autocomplete="on" autocorrect="on" placeholder="Chercher une image" spellcheck="true" class="searchbar searchbar-md ng-untouched ng-pristine ng-valid searchbar-animated">
-              <div class="searchbar-input-container">
-                <button class="searchbar-md-cancel button button-md button-clear button-clear-md button-clear-md-dark" clear="" color="dark" ion-button="" mode="md" type="button">
-                  <span class="button-inner">
-                    <ion-icon name="md-arrow-back" role="img" class="icon icon-md ion-md-arrow-back" aria-label="arrow back"></ion-icon>
-                  </span>
-                  <div class="button-effect"></div>
-                </button>
-                <div class="searchbar-search-icon"></div>
-                <input class="searchbar-input" dir="auto" placeholder="Chercher une image" type="search" autocomplete="on" autocorrect="on" spellcheck="true">
-                <button class="searchbar-clear-icon button button-md button-clear button-clear-md" clear="" ion-button="" type="button">
-                  <span class="button-inner"></span>
-                  <div class="button-effect"></div>
-                </button>
-              </div>
-              <button class="searchbar-ios-cancel button button-ios button-clear button-clear-ios" clear="" ion-button="" mode="ios" type="button" tabindex="-1">
-                <span class="button-inner">Annuler</span>
-                <div class="button-effect"></div>
-              </button>
+            <ion-searchbar
+              [(ngModel)]="keyWord"
+              [showCancelButton]="shouldShowCancel"
+              autocomplete="on"
+              autocorrect="on"
+              placeholder="Chercher une image">
             </ion-searchbar>
             <!---->
           </ion-col>
         </ion-row>
-        <!--Sarching parameters-->
+        <!--End search keyword-->
+
+        <!--Start sarching parameters-->
+          <!--Start first-button-->
           <ion-row class="row">
             <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
               <div class="guests bb">
                 <ion-item class="item item-block item-md item-select">
                   <ion-label class="label label-md">Orientation</ion-label>
-                  <ion-select [(ngModel)]="orientation" okText="Ok" cancelText="Annuler">
-                    <ion-option *ngFor="let o of orientations" value="{{o.id}}" [selected]="o.value == 'all'">{{o.label}}</ion-option>
+                  <ion-select  [(ngModel)]="orientation" [compareWith]="orientationCompare" (ionChange)="onOrientationChange($event)" okText="Ok" cancelText="Annuler">
+                    <ion-option *ngFor="let o of orientations" [value]="o" [selected]="o.value == 'all'">{{o.label}}</ion-option>
                   </ion-select>
                 </ion-item>
               </div>
@@ -62,23 +52,76 @@
               <div class="guests bb">
                 <ion-item class="item item-block item-md item-select">
                   <ion-label class="label label-md">Catégorie</ion-label>
-                  <ion-select [(ngModel)]="category" okText="Ok" cancelText="Annuler">
-                    <ion-option *ngFor="let c of categories" value="{{c.id}}" [selected]="c.value == 'nil'">{{c.label}}</ion-option>
+                  <ion-select [(ngModel)]="category" [compareWith]="categoryCompare" (ionChange)="onCategoryChange($event)" okText="Ok" cancelText="Annuler">
+                    <ion-option *ngFor="let c of categories" [value]="c" [selected]="c.value == 'nil'">{{c.label}}</ion-option>
                   </ion-select>
                 </ion-item>
               </div>
             </ion-col>
           </ion-row>
-        <!--Search Button-->
+          <!--End first-button-->
+          <!--Start second-button-->
+          <ion-row class="row">
+            <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
+              <div class="guests bb">
+                <ion-item class="item item-block item-md item-select">
+                  <ion-label class="label label-md">Couleur</ion-label>
+                  <ion-select  [(ngModel)]="color" [compareWith]="colorCompare" (ionChange)="onColorChange($event)" okText="Ok" cancelText="Annuler" multiple>
+                    <ion-option *ngFor="let c of colors" [value]="c" >{{c.label}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+            </ion-col>
+            <ion-col class="no-paddingT no-paddingB col" col-6="" col-md-4="">
+              <div class="guests bb">
+                <ion-item class="item item-block item-md item-select">
+                  <ion-label class="label label-md" (click)="sizePrompt()">Taille</ion-label>
+                </ion-item>
+              </div>
+            </ion-col>
+          </ion-row>
+          <!--End second-button-->
+        <!--End sarching parameters-->
+
+        <!--Start search Button-->
         <ion-row class="row">
           <ion-col class="col">
-            <button block="" class="round button button-md button-default button-default-md button-block button-block-md button-md-primary" color="primary" ion-button="" tappable=""><span class="button-inner">
-              <ion-icon name="search" role="img" class="icon icon-md ion-md-search" aria-label="search"></ion-icon>
+            <button block="" class="round button button-md button-default button-default-md button-block button-block-md button-md-primary" (click)="search()" color="primary" ion-button="" tappable=""><span class="button-inner">
+              <ion-icon name="search" role="img" class="icon icon-md ion-md-search" aria-label="search" ></ion-icon>
               Chercher
             </span><div class="button-effect" style="transform: translate3d(-5px, -97px, 0px) scale(1); height: 240px; width: 240px; opacity: 0; transition: transform 395ms, opacity 277ms 118ms;"></div></button>
           </ion-col>
         </ion-row>
+        <!--End search Button-->
       </ion-grid>
+      <!--<ion-grid>
+        <ion-row>
+          <ion-col col-auto *ngFor="let img of images.hits">
+            <ion-card>
+              <ion-card-header class="myCardHeader">
+                <p>{{img.tags}}</p>
+              </ion-card-header>
+              <ion-card-content>
+                <img src="{{img.previewURL}}">
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>-->
+      <div *ngIf="images.hits">
+        <ion-card  *ngFor="let img of images.hits">
+          <ion-card-header  class="myCardHeader">
+            {{img.tags}}
+          </ion-card-header>
+          <ion-card-content>
+            <img src="{{img.previewURL}}">
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div *ngIf="!images.hits">
+        Aucun résultat n'est trouvé!!
+      </div>
+      
     </div>
 
   </div>

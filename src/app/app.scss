@@ -16,7 +16,7 @@
 // automatically applied to the <body> element in the app.
 ::-webkit-scrollbar { /* for Mac OS X support */
     width: 0px;
-    background-color: #1fb5ac;
+    background-color: #563d7c;
 }
 .myCardHeader{
     background-color: #986cda;
@@ -298,8 +298,39 @@ ion-list .fa{
         margin-left: 0;
         margin-right: 0;
     }
+    .alert-wrapper {
+        border-radius: 13px !important;
+    }
+    [aria-checked=true] .alert-radio-label{
+        font-weight: bold;
+    }
+    .alert-head {
+        text-align: center;
+    }
+    .alert-ios .alert-radio-group, .alert-ios .alert-checkbox-group {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    [aria-checked=true] .alert-radio-label, [aria-checked=true] .alert-radio-icon ,.alert-button{
+        color: #563d7c !important;
+    }
+    .alert-md .alert-radio-inner{
+        background-color: #563d7c !important;
+    }
+   [aria-checked=true] .alert-radio-icon {
+        border-color: #563d7c !important;
+    }
+    
+    .alert-ios [aria-checked=true] .alert-radio-inner{
+        border-color: #563d7c !important;
+    }
+    // .pink [aria-checked=true] .alert-radio-label, .pink [aria-checked=true] .alert-radio-icon ,.pink .alert-button{
+    //     color: pink !important;
+    // }
 
-    
-    
+    [aria-checked=true] .alert-checkbox-icon {
+        border-color: #563d7c !important;
+        background-color: #563d7c !important;
+    }
 
 
