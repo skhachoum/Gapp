@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { GalleryPage } from "../pages/gallery/gallery";
 import { MeteoPage } from "../pages/meteo/meteo";
 import { PlacesPage } from "../pages/places/places";
+import { DetailImagePage } from "../pages/detail-image/detail-image";
 import { GalleryProvider } from '../providers/gallery/gallery';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GalleryProvider } from '../providers/gallery/gallery';
     HomePage,
     GalleryPage,
     MeteoPage,
-    PlacesPage
+    PlacesPage,
+    DetailImagePage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { GalleryProvider } from '../providers/gallery/gallery';
     HomePage,
     GalleryPage,
     MeteoPage,
-    PlacesPage
+    PlacesPage,
+    DetailImagePage
   ],
   providers: [
     StatusBar,

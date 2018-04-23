@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { GalleryProvider } from "../../providers/gallery/gallery";
+import { DetailImagePage } from "../detail-image/detail-image";
 
 /**
  * Generated class for the GalleryPage page.
@@ -15,8 +16,11 @@ import { GalleryProvider } from "../../providers/gallery/gallery";
   templateUrl: 'gallery.html',
 })
 export class GalleryPage {
-  public images: any = [];
+  public images: any = {hits:[]};
   public keyWord: any;
+  public per_page: number = 10;
+  public currentPage: number = 1;
+  public total_pages: number;
   public orientation: any;
   public orientations = [
     {value: "all", label: "Tout"},
@@ -71,12 +75,15 @@ export class GalleryPage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public _alertCtrl: AlertController,
-              public _galleryProvider: GalleryProvider) {
+              public _galleryProvider: GalleryProvider,
+              private _loadingCtrl : LoadingController) {
                 this.category = this.categories[0];
                 this.orientation = this.orientations[0];
+                this.doSearch();
   }
 
   ionViewDidLoad() {
+    
   }
   orientationCompare(a:{value:string,label:string},b:{value:string,label:string}){
     if(a.value === b.value){
@@ -138,8 +145,33 @@ export class GalleryPage {
     });
     alert.present();
   }
-  search(){
-    this.images = [];
+
+  remteErrorPrompt(details : any) {
+    this.keyWord = "";
+    let alert = this._alertCtrl.create({
+        title: 'Erreur de serveur',
+        subTitle: details,
+        buttons: [{
+                    text: 'Ok',
+                    handler: () => {
+                      this.doSearch();
+                    }
+                  },
+                ]
+      });
+      alert.present();
+  }
+  onSearch(){
+
+    this.images.hits = [];
+
+    this.doSearch();
+  }
+  doSearch(){
+    let loading = this._loadingCtrl.create({
+      content:'Veuillz patientez...'
+    });
+
     let colors="";
     if(this.color){
       let index = 0;
@@ -151,15 +183,44 @@ export class GalleryPage {
         }
       }
     }
+    
+    loading.present();
     this._galleryProvider.search("&q="+(this.keyWord?this.keyWord:''),
                           "&orientaion="+this.orientation.value,
                           (this.category.value=='nil')?'':"&cat="+this.category.value,
                           colors?"&colors="+colors:'',
                           this.width?"&min_width="+this.width:'',
-                          this.height?"&min_height="+this.height:'')
+                          this.height?"&min_height="+this.height:'',
+                          "&per_page="+this.per_page,
+                          "&page="+this.currentPage)
                           .subscribe(result => {
-                            this.images = result;
-                          });
+                                                  this.total_pages = result.totalHits / this.per_page;
+                                                  if(this.total_pages % this.per_page != 0) ++this.total_pages;
+                                                  for(let element of result.hits){
+                                                      this.images.hits.push(element)
+                                                  }
+                                                  if(this.images.hits.length == 0){
+                                                    this.remteErrorPrompt("Aucun résultat n'est trouvé!!");
+                                                  }
+                                                  
+                                                  loading.dismiss();
+                                                },
+                                      error => {
+                                                  loading.dismiss();
+                                                  this.remteErrorPrompt(error);
+                                                }
+                          );
+  }
+  doInfinite(e : any){
+    if(this.currentPage < this.total_pages){
+        ++this.currentPage;
+        this.doSearch();
+    }
+    e.complete();
+  }
+  goToDetail(img : any){
+    this.navCtrl.push(DetailImagePage,{image:img, title:(this.keyWord==""?"Hazard":""+this.keyWord) });
+
   }
   
 

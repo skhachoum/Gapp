@@ -66,12 +66,12 @@ page-gallery {
         width: 21px;
         height: 100%;
     }
-    .button-clear-md-dark {
+    .button-clear-md-dark, .button-clear-ios-dark {
         border-color: transparent;
         color: #412d61;
         background-color: transparent;
     }
-    .button-clear-md {
+    .button-clear-md, .button-clear-ios {
         border-color: transparent;
         color: #563d7c;
         background-color: transparent;
@@ -101,7 +101,7 @@ page-gallery {
     .searchbar-md .searchbar-ios-cancel {
         display: none;
     }
-    .gallery-card ion-grid .searchbar.searchbar-md .searchbar-input {
+    .gallery-card ion-grid .searchbar.searchbar-md .searchbar-input,.gallery-card ion-grid .searchbar.searchbar-ios .searchbar-input {
         -webkit-box-shadow: inset 0 0 8px rgba(86,61,124,.25), 0 6px 0 #563d7c;
         box-shadow: inset 0 0 8px rgba(86,61,124,.25), 0 6px 0 #563d7c;
     }
@@ -272,6 +272,19 @@ page-gallery {
     .card-content{
         background-color: beige;
     }
+    .gallery-card ion-grid .searchbar.searchbar-ios .searchbar-input{
+        padding: 5px 60px;
+        height: auto;
+        font-size: 1.6rem;
+        line-height: 3.3rem;
+    }
+    .card-ios h2 {
+        margin: 2px 0;
+        font-size: 1.6rem;
+        font-weight: normal;
+        color: #222;
+    }
+        
 
 
 

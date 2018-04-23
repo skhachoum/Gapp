@@ -17,7 +17,8 @@
 
 <ion-content class="animated fadeIn common-bg content content-md">
   <div class="fixed-content" style="margin-top: 56px;"></div>
-  <div class="scroll-content" >
+  <!--<div class="scroll-content" >-->
+  <div>
     <div class="gallery-card marginB-16px">
       <ion-grid class="card grid" fixed="">
         <!--Start search keyword-->
@@ -86,7 +87,7 @@
         <!--Start search Button-->
         <ion-row class="row">
           <ion-col class="col">
-            <button block="" class="round button button-md button-default button-default-md button-block button-block-md button-md-primary" (click)="search()" color="primary" ion-button="" tappable=""><span class="button-inner">
+            <button block="" class="round button button-md button-default button-default-md button-block button-block-md button-md-primary" (click)="onSearch()" color="primary" ion-button="" tappable=""><span class="button-inner">
               <ion-icon name="search" role="img" class="icon icon-md ion-md-search" aria-label="search" ></ion-icon>
               Chercher
             </span><div class="button-effect" style="transform: translate3d(-5px, -97px, 0px) scale(1); height: 240px; width: 240px; opacity: 0; transition: transform 395ms, opacity 277ms 118ms;"></div></button>
@@ -94,35 +95,52 @@
         </ion-row>
         <!--End search Button-->
       </ion-grid>
-      <!--<ion-grid>
-        <ion-row>
-          <ion-col col-auto *ngFor="let img of images.hits">
-            <ion-card>
-              <ion-card-header class="myCardHeader">
-                <p>{{img.tags}}</p>
-              </ion-card-header>
-              <ion-card-content>
-                <img src="{{img.previewURL}}">
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>-->
-      <div *ngIf="images.hits">
-        <ion-card  *ngFor="let img of images.hits">
-          <ion-card-header  class="myCardHeader">
-            {{img.tags}}
-          </ion-card-header>
-          <ion-card-content>
-            <img src="{{img.previewURL}}">
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div *ngIf="!images.hits">
-        Aucun résultat n'est trouvé!!
-      </div>
-      
     </div>
-
   </div>
+
+  <div>
+    <ion-card *ngFor="let img of images.hits">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{img.userImageURL}}">
+        </ion-avatar>
+        <h2>{{img.user}}</h2>
+        <p>{{img.user_id}}</p>
+      </ion-item>
+
+      <img src="{{img.previewURL}}" (click)="goToDetail(img)">
+
+      <ion-card-content>
+        <p>{{img.tags}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>{{img.views}} Vues</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{img.likes}} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{img.comments}} Comments</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  
 </ion-content>
+
