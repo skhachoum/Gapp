@@ -219,7 +219,7 @@ export class GalleryPage {
     e.complete();
   }
   goToDetail(img : any){
-    this.navCtrl.push(DetailImagePage,{image:img, title:(this.keyWord==""?"Hazard":""+this.keyWord) });
+    this.navCtrl.push(DetailImagePage,{image:img, title:(this.keyWord?""+this.keyWord:"Hazard") });
 
   }
   

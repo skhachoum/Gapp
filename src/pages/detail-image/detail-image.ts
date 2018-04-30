@@ -14,13 +14,13 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'detail-image.html',
 })
 export class DetailImagePage {
-  public image : any;
+  public img : any;
   public title : any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public _viewCtrl: ViewController) {
-    this.image =  this.navParams.data.image;
+    this.img =  this.navParams.data.image;
     this.title = this.navParams.data.title;
   }
 

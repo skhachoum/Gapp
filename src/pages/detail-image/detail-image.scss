@@ -11,5 +11,21 @@ page-detail-image {
     //         }
     //     }
     // }
+    .button-clear-md-dark, .button-clear-ios-dark {
+        border-color: transparent;
+        color: #412d61;
+        background-color: transparent;
+    }
+    .button-clear-md, .button-clear-ios {
+        border-color: transparent;
+        color: #563d7c;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: 1;
+    }
+    .card-content{
+        background-color: beige;
+    }
 
 }

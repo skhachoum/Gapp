@@ -99,43 +99,11 @@
   </div>
 
   <div>
-    <ion-card *ngFor="let img of images.hits">
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="{{img.userImageURL}}">
-        </ion-avatar>
-        <h2>{{img.user}}</h2>
-        <p>{{img.user_id}}</p>
-      </ion-item>
-
-      <img src="{{img.previewURL}}" (click)="goToDetail(img)">
-
-      <ion-card-content>
-        <p>{{img.tags}}</p>
-      </ion-card-content>
-
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="eye"></ion-icon>
-            <div>{{img.views}} Vues</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>{{img.likes}} Likes</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>{{img.comments}} Comments</div>
-          </button>
-        </ion-col>
-      </ion-row>
-
-    </ion-card>
+     <ion-card *ngFor="let img of images.hits">
+        <img src="{{img.previewURL}}" (click)="goToDetail(img)"/>
+        <div class="card-title">{{img.user}}</div>
+        <div class="card-subtitle">{{img.user_id}}</div>
+      </ion-card>
 
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
       <ion-infinite-scroll-content></ion-infinite-scroll-content>

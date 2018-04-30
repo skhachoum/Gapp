@@ -15,5 +15,41 @@
 
 <ion-content class="animated fadeIn common-bg content content-md">
   <div class="fixed-content" style="margin-top: 56px;"></div>
-  <img alt="" src="{{image.webformatURL}}">
+  <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{img.userImageURL}}">
+        </ion-avatar>
+        <h2>{{img.user}}</h2>
+        <p>{{img.user_id}}</p>
+      </ion-item>
+
+      <img src="{{img.webformatURL}}">
+
+      <ion-card-content>
+        <p>{{img.tags}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>{{img.views}} Vues</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{img.likes}} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{img.comments}} Comments</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
 </ion-content>
