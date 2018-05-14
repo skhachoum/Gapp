@@ -4,10 +4,10 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="animated fadeIn no-shadow header header-md">
 
   <ion-navbar color="purple">
-    <ion-title>meteo</ion-title>
+    <ion-title>Météo</ion-title>
     <button ion-button="" menuToggle="">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -16,6 +16,64 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="animated fadeIn common-bg content content-md">
+  <!--<div class="scroll-content" >-->
+  <div class="fixed-content" style="margin-top: 56px;"></div>
+  <ion-grid class="card first" padding *ngIf="meteo">
+    <ion-row>
+        <ion-col class="center" >
+            <h1 class="temp">{{meteo.main.temp}} &deg;C</h1>
+        </ion-col>
+        <!--<ion-col >
+        </ion-col>-->
+    </ion-row>
+    <ion-row>
+        <ion-col class="center">
+            <h3 class="location">{{meteo.name}},{{meteo.sys.country}}</h3>
+            <h5 class="time">{{ currentDate | date: 'dd/MM-HH:mm'}}</h5>
+            <div style="display: inline-flex">
+              <img src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"/>
+              <h5 class="desc">{{meteo.weather[0].description}}</h5>
+            </div>
+        </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <ion-grid class="card details second" padding *ngIf="meteo">
+    <ion-row>
+        <ion-col >
+          <strong>Humidité</strong><br>
+          {{meteo.main.humidity}} %
+        </ion-col>
+        <ion-col >
+          <strong>Pression</strong><br>
+          {{meteo.main.pressure}} hpa
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col >
+          <strong>Temp.minimale</strong><br>
+          {{meteo.main.temp_min }}&deg;C
+        </ion-col>
+        <ion-col >
+          <strong>Temp.maximale</strong><br>
+          {{meteo.main.temp_max }}&deg;C
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col >
+          <strong>Lever du soleil</strong><br>
+          {{meteo.sys.sunrise*1000| date: 'hh:mm aa'}}
+        </ion-col>
+        <ion-col >
+          <strong>Coucher de soleil</strong><br>
+          {{meteo.sys.sunset*1000| date: 'hh:mm aa'}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col >  
+          <button ion-button style="border-radius: 35%; background-color: #986cda">+</button>
+        </ion-col>
+    </ion-row>
+  </ion-grid> 
+  
 </ion-content>

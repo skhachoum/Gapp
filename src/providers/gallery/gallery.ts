@@ -17,8 +17,8 @@ export class GalleryProvider {
   }
 
   search(keyWord:any, orientation?:any, category?:any, colors?:any, min_width?:any, min_height?:any,per_page?:any, page?:any): any{
-    return this.http.get(AppCustomConfig.PUBLIC_API_ENDPOINT
-                        +AppCustomConfig.API_KEY
+    return this.http.get(AppCustomConfig.PIXABAY_API_ENDPOINT
+                        +AppCustomConfig.PIXABAY_API_KEY
                         +keyWord
                         +orientation
                         +category
@@ -27,7 +27,7 @@ export class GalleryProvider {
                         +min_height
                         +per_page
                         +page
-                        +AppCustomConfig.API_CONFIG)
+                        +AppCustomConfig.PIXABAY_API_CONFIG)
                         .map(response => {
                                           return response;
                                         },

@@ -1,3 +1,76 @@
 page-meteo {
+    ion-content {
+        position: absolute;
+    }
+    
+    .first{      
+        min-height: 30%;
+    }
+    .second {      
+        min-height: 70%;
+    }
 
+    .md {
+            ion-header {
+                &.no-shadow::after {
+                background-image: none;
+                }
+            }
+
+            ion-toolbar, ion-navbar {
+                .button,
+                .button.activated {
+                    box-shadow: none;
+                }
+            }
+        }
+
+    .ios {
+        ion-list ion-item, .list-hotels .hotel-bg {
+            pointer-events: none;
+        }
+    }
+    .center {
+        text-align: center;
+        color: #563d7c;
+    }
+    .location, .meteo, .time, .temp{
+        padding: 0px;
+        margin: 0px;
+    }
+    .location, .meteo, .time, .desc{
+        color: #000;
+    }
+    .temp{
+        font-size: 6em;
+        color: #412d61;
+    }
+    .card{
+        background-color: #FEFEE0;
+        padding: 16px 0px 0px 0px;    
+        border-radius: 0px;
+    }
+    .details{
+        text-align: center;
+        padding: 0px;
+        background-color: #412d61 !important;
+        color: #fff;
+    }
+    .details ion-row{
+        min-height: 30.33%;
+        padding: 5px 0px 5px 0px;
+        font-size: 1.1em;
+    }
+    .details ion-row strong{
+        color: #E9C9B1;
+    } 
+    .details ion-row:nth-child(2){
+        border-bottom: 1px solid beige;
+        border-top: 1px solid beige;
+    }
+    .details button {
+        border-radius: 35%;
+        background-color: #986cda;
+        color:#E9C9B1;
+    }
 }

@@ -12,6 +12,7 @@ import { MeteoPage } from "../pages/meteo/meteo";
 import { PlacesPage } from "../pages/places/places";
 import { DetailImagePage } from "../pages/detail-image/detail-image";
 import { GalleryProvider } from '../providers/gallery/gallery';
+import { MeteoProvider } from '../providers/meteo/meteo';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { GalleryProvider } from '../providers/gallery/gallery';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GalleryProvider
+    GalleryProvider,
+    MeteoProvider
   ]
 })
 export class AppModule {}
