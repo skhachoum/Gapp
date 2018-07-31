@@ -62,5 +62,8 @@ export class MeteoPage {
       });
       alert.present();
   }
+  goToDetails(){
+    this.navCtrl.push("MeteoDetailsPage");
+  }
 
 }

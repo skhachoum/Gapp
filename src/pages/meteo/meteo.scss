@@ -5,6 +5,7 @@ page-meteo {
     
     .first{      
         min-height: 30%;
+        text-align: center;
     }
     .second {      
         min-height: 70%;
@@ -41,12 +42,17 @@ page-meteo {
     .location, .meteo, .time, .desc{
         color: #000;
     }
+    .location{
+      line-height: 18pt;
+    }
     .temp{
-        font-size: 6em;
+        // font-size: 6vw;
+        // font-size: 6vh;
+        font-size: 7em;
         color: #412d61;
     }
     .card{
-        background-color: #FEFEE0;
+        background-color: #dedede;
         padding: 16px 0px 0px 0px;    
         border-radius: 0px;
     }
@@ -72,5 +78,9 @@ page-meteo {
         border-radius: 35%;
         background-color: #986cda;
         color:#E9C9B1;
+    }
+    img {
+        width: 60px;
+        height: 80px;
     }
 }

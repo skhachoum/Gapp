@@ -20,21 +20,24 @@
   <!--<div class="scroll-content" >-->
   <div class="fixed-content" style="margin-top: 56px;"></div>
   <ion-grid class="card first" padding *ngIf="meteo">
-    <ion-row>
-        <ion-col class="center" >
-            <h1 class="temp">{{meteo.main.temp}} &deg;C</h1>
+    <ion-row align-items-start>
+        <ion-col>
+            <h1 class="temp">{{meteo.main.temp | number: '2.0-0'}}<sup>&deg;
+              <img src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"/></sup>
+            </h1>
         </ion-col>
-        <!--<ion-col >
+        <!--<ion-col>
         </ion-col>-->
     </ion-row>
     <ion-row>
-        <ion-col class="center">
-            <h3 class="location">{{meteo.name}},{{meteo.sys.country}}</h3>
-            <h5 class="time">{{ currentDate | date: 'dd/MM-HH:mm'}}</h5>
-            <div style="display: inline-flex">
-              <img src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"/>
-              <h5 class="desc">{{meteo.weather[0].description}}</h5>
-            </div>
+        <ion-col>
+            <p class="location">{{meteo.name}},{{meteo.sys.country}}<br>
+            {{ currentDate | date: 'dd/MM-HH:mm'}}<br>
+            <strong>{{meteo.weather[0].description}}</strong>
+            <!--<div style="display: inline-flex">
+              <!--<img src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"/>-->
+              <!--<h5 class="desc">{{meteo.weather[0].description}}</h5>-->
+            <!--</div>-->
         </ion-col>
     </ion-row>
   </ion-grid> 
@@ -71,7 +74,7 @@
     </ion-row>
     <ion-row>
         <ion-col >  
-          <button ion-button style="border-radius: 35%; background-color: #986cda">+</button>
+          <button ion-button style="border-radius: 35%; background-color: #986cda" (click)="goToDetails()">+</button>
         </ion-col>
     </ion-row>
   </ion-grid> 

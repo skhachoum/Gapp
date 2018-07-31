@@ -11,12 +11,12 @@ import { MeteoPage } from "../pages/meteo/meteo";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = 'HomePage';
   menus = [
-    {title:'Home', component:HomePage, icon: 'home'},
-    {title:'Galerie', component:GalleryPage, icon: 'image'},
-    {title:'Adresse', component:PlacesPage, icon: 'globe'},
-    {title:'Météo', component:MeteoPage, icon: 'bolt'},
+    {title:'Home', component:'HomePage', icon: 'home'},
+    {title:'Galerie', component:'GalleryPage', icon: 'image'},
+    {title:'Adresse', component:'PlacesPage', icon: 'globe'},
+    {title:'Météo', component:'MeteoPage', icon: 'bolt'},
   ]
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

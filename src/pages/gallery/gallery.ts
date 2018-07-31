@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { GalleryProvider } from "../../providers/gallery/gallery";
-import { DetailImagePage } from "../detail-image/detail-image";
 
 /**
  * Generated class for the GalleryPage page.
@@ -219,7 +218,7 @@ export class GalleryPage {
     e.complete();
   }
   goToDetail(img : any){
-    this.navCtrl.push(DetailImagePage,{image:img, title:(this.keyWord?""+this.keyWord:"Hazard") });
+    this.navCtrl.push('DetailImagePage',{image:img, title:(this.keyWord?""+this.keyWord:"Hazard") });
 
   }
   
