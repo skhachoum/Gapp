@@ -1,0 +1,5 @@
+layout : center-right
+
+logo : assets/imgs/logo.png
+
+theme-override : assets/css/PITCHME.css
