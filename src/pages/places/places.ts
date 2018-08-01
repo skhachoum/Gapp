@@ -56,7 +56,7 @@ export class PlacesPage {
       }
       
   nearbyPlace(){
-    this.loadMap();
+    // this.loadMap();
     this.markers = [];
     let service = new google.maps.places.PlacesService(this.map);
     service.nearbySearch({
